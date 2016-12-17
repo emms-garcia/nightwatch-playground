@@ -20,8 +20,4 @@ module.exports = {
     default: {
         launchUrl: 'https://google.com',
     },
-
-    chrome: {
-        launchUrl: 'https://google.com',
-    },
 };

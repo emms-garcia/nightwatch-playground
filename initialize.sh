@@ -11,6 +11,7 @@ else
     fi
 fi
 
+mkdir -p ./bin
 if [ -f ./bin/selenium-server-standalone-3.0.0.jar ]; then
     echo "Step 2: Selenium already downloaded."
 else
@@ -24,10 +25,10 @@ else
     echo "Step 3: Downloading Chrome Driver..."
     if [ "$(uname)" == "Darwin" ]; then
         wget --quiet https://chromedriver.storage.googleapis.com/2.26/chromedriver_mac64.zip -P ./bin
-        unzip ./bin/chromedriver_mac64.zip -d ./bin
+        unzip ./bin/chromedriver_mac64.zip -d ./bin > /dev/null
     elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
         wget --quiet https://chromedriver.storage.googleapis.com/2.26/chromedriver_linux64.zip ./bin
-        unzip ./bin/chromedriver_linux64.zip -d ./bin
+        unzip ./bin/chromedriver_linux64.zip -d ./bin > /dev/null
     fi
     rm ./bin/*.zip
 fi
